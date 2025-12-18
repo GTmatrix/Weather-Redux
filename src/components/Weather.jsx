@@ -13,8 +13,6 @@ const Weather = () => {
         return <div className="infoWeath"><p className="error">{message}</p></div>;
     }
 
-    if (!weatherInfo.city) return null;
-
     return (
         <div className='infoWeath'>
             <p>Location: {weatherInfo.country}, {weatherInfo.city}</p>
