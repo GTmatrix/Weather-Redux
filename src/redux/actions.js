@@ -23,6 +23,7 @@ export const fetchWeather = (city) => {
                 });
             })
             .catch(error => {
+                console.error("Detailed Fetch Error:", error);
                 dispatch({
                     type: FETCH_WEATHER_FAILURE,
                     payload: 'Error getting weather, please check spelling!'
