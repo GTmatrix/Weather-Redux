@@ -1,7 +1,7 @@
-import { useSelector } from "react-redux";
+import {useSelector} from "react-redux";
 
 const Weather = () => {
-    const { weatherInfo, message, loading } = useSelector(state => ({
+    const {weatherInfo, message, loading} = useSelector(state => ({
         weatherInfo: state.weatherInfo,
         message: state.message,
         loading: state.loading

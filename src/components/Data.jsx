@@ -4,8 +4,8 @@ import Weather from "./Weather.jsx";
 const Data = () => {
     return (
         <div>
-            <Form />
-            <Weather />
+            <Form/>
+            <Weather/>
         </div>
     );
 };

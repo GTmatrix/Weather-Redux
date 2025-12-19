@@ -1,6 +1,6 @@
-import { useState } from "react";
-import { useDispatch } from "react-redux";
-import { fetchWeather } from "../redux/actions.js";
+import {useState} from "react";
+import {useDispatch} from "react-redux";
+import {fetchWeather} from "../redux/actions.js";
 
 const Form = () => {
     const [city, setCity] = useState('');

@@ -1,6 +1,6 @@
-import { createStore, applyMiddleware, compose } from 'redux';
-import { thunk } from 'redux-thunk';
-import { weatherReducer } from './reducer';
+import {applyMiddleware, compose, createStore} from 'redux';
+import {thunk} from 'redux-thunk';
+import {weatherReducer} from './reducer';
 
 
 const loggerMiddleware = store => next => action => {

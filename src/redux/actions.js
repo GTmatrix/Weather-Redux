@@ -1,9 +1,9 @@
-import { FETCH_WEATHER_REQUEST, FETCH_WEATHER_SUCCESS, FETCH_WEATHER_FAILURE } from './actionTypes';
-import { baseURL, api_key } from '../utils/constants';
+import {FETCH_WEATHER_FAILURE, FETCH_WEATHER_REQUEST, FETCH_WEATHER_SUCCESS} from './actionTypes';
+import {api_key, baseURL} from '../utils/constants';
 
 export const fetchWeather = (city) => {
     return (dispatch) => {
-        dispatch({ type: FETCH_WEATHER_REQUEST });
+        dispatch({type: FETCH_WEATHER_REQUEST});
 
         fetch(`${baseURL}?q=${city}&appid=${api_key}&units=metric`)
             .then(response => {

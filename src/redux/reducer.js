@@ -1,4 +1,4 @@
-import { FETCH_WEATHER_REQUEST, FETCH_WEATHER_SUCCESS, FETCH_WEATHER_FAILURE } from './actionTypes';
+import {FETCH_WEATHER_FAILURE, FETCH_WEATHER_REQUEST, FETCH_WEATHER_SUCCESS} from './actionTypes';
 
 const initialState = {
     weatherInfo: {},
@@ -9,11 +9,11 @@ const initialState = {
 export const weatherReducer = (state = initialState, action) => {
     switch (action.type) {
         case FETCH_WEATHER_REQUEST:
-            return { ...state, loading: true, message: 'Loading...' };
+            return {...state, loading: true, message: 'Loading...'};
         case FETCH_WEATHER_SUCCESS:
-            return { ...state, loading: false, weatherInfo: action.payload, message: '' };
+            return {...state, loading: false, weatherInfo: action.payload, message: ''};
         case FETCH_WEATHER_FAILURE:
-            return { ...state, loading: false, weatherInfo: {}, message: action.payload };
+            return {...state, loading: false, weatherInfo: {}, message: action.payload};
         default:
             return state;
     }
