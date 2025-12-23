@@ -1,19 +1,17 @@
-import {applyMiddleware, compose, createStore} from 'redux';
-import {thunk} from 'redux-thunk';
-import {weatherReducer} from './reducer';
+import { configureStore } from '@reduxjs/toolkit';
+import weatherReducer from './weatherSlice';
 
-
-const loggerMiddleware = store => next => action => {
+const loggerMiddleware = _store => next => action => {
     console.log('Dispatching action:', action);
     return next(action);
 };
 
-
-const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
-
-const store = createStore(
-    weatherReducer,
-    composeEnhancers(applyMiddleware(thunk, loggerMiddleware))
-);
+const store = configureStore({
+    reducer: {
+        weather: weatherReducer
+    },
+    middleware: (getDefaultMiddleware) =>
+        getDefaultMiddleware().concat(loggerMiddleware),
+});
 
 export default store;

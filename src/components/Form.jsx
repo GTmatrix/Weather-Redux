@@ -1,6 +1,6 @@
 import {useState} from "react";
 import {useDispatch} from "react-redux";
-import {fetchWeather} from "../redux/actions.js";
+import { fetchWeatherAction } from "../redux/weatherSlice.js";
 
 const Form = () => {
     const [city, setCity] = useState('');
@@ -9,7 +9,7 @@ const Form = () => {
     const handleButtonSubmit = event => {
         event.preventDefault();
         if (city.trim()) {
-            dispatch(fetchWeather(city));
+            dispatch(fetchWeatherAction(city));
             setCity('');
         }
     }
