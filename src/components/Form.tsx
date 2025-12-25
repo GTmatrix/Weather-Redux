@@ -1,12 +1,14 @@
-import {useState} from "react";
-import {useDispatch} from "react-redux";
-import { fetchWeatherAction } from "../redux/weatherSlice.js";
+// @ts-ignore
+import React, { useState } from "react";
+import { useDispatch } from "react-redux";
+import { fetchWeatherAction } from "../redux/weatherSlice";
+import { AppDispatch } from "../redux/store";
 
 const Form = () => {
-    const [city, setCity] = useState('');
-    const dispatch = useDispatch();
+    const [city, setCity] = useState<string>('');
+    const dispatch = useDispatch<AppDispatch>();
 
-    const handleButtonSubmit = event => {
+    const handleButtonSubmit = (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
         if (city.trim()) {
             dispatch(fetchWeatherAction(city));

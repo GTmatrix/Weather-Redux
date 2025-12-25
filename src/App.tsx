@@ -2,8 +2,8 @@
 //import reactLogo from './assets/react.svg'
 //import viteLogo from '/vite.svg'
 import './App.css'
-import Info from "./components/Info.jsx";
-import Data from "./components/Data.jsx";
+import Info from "./components/Info.js";
+import Data from "./components/Data.js";
 
 function App() {
     return (

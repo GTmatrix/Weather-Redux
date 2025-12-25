@@ -1,7 +1,8 @@
 import { useSelector } from "react-redux";
+import { RootState } from "../redux/store";
 
 const Weather = () => {
-    const { weatherInfo, message, loading } = useSelector(state => state.weather);
+    const { weatherInfo, message, loading } = useSelector((state: RootState) => state.weather);
 
     if (loading) {
         return <div className="infoWeath"><p>Loading...</p></div>;
